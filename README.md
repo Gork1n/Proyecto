@@ -6,7 +6,7 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 ##Instrucciones para iniciar el programa
 
 1.Crear el entorno virtual: python -m virtualenv venv
-2.Iniciar el ambiente virtual: .\venv\Scripts\activate
+2.Iniciar el virtual environment: .\venv\Scripts\activate
 3.Por último, instalar los requerimientos: pip install -r "requerimientos.txt"
 
 
