@@ -12,5 +12,3 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 
 
 
-
-
