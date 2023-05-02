@@ -7,7 +7,7 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 
 1. Crear el entorno virtual: python -m virtualenv venv
 2. Iniciar el virtual enviroment: .\venv\Scripts\activate
-3. Por último, instalar los requirements: pip install -r "requirements.txt"
+3. Por último, instalar los requirements: pip install -r requirements.txt
 
 
 
