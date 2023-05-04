@@ -10,7 +10,6 @@ HEADER = 10
 n = 0
 
 class Controller:
-
     def __init__(self, root):
         self.root_controler = root
         self.objeto_vista = client_view.Ventana(self.root_controler)

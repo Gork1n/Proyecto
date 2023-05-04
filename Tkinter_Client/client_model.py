@@ -7,14 +7,13 @@ HEADER = 10
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 class Abmc:
-    def server(self,):
+    def server():
         server.connect((HOST, PORT))
-
-    def alta(self, _nombre, _stock, _precio, _precio_venta, mitreeview):
-        nombre = _nombre.get()
-        stock = _stock.get()
-        precio = _precio.get()
-        precio_venta = _precio_venta.get()
+    def alta(self):
+        nombre = self.nmb.get()
+        stock = self.stk.get()
+        precio = self.prc.get()
+        precio_venta = self.prc_v.get()
 
         info= [nombre, stock, precio, precio_venta]
         data_serial = pickle.dumps(info)
@@ -25,21 +24,24 @@ class Abmc:
     def baja(self, mitreeview):
         try:
             item_sleccionado = mitreeview.focus()
-            valor_id = mitreeview.item(item_sleccionado)
-            valor = valor_id["text"]
-            list = [valor, "_baja"]
-            data_serial = pickle.dumps(list)
-            data_len = str(len(data_serial))
-            message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
-            server.send(message)
+            if not item_sleccionado:
+                print("No marco el objeto deseado")
+            else:
+                valor_id = mitreeview.item(item_sleccionado)
+                valor = valor_id["text"]
+                list = [valor, "_baja"]
+                data_serial = pickle.dumps(list)
+                data_len = str(len(data_serial))
+                message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
+                server.send(message)
         except:
-            print("No marco el objeto deseado")
+            print("Error al eliminar")
     
-    def modificar(self, nombre, stock, precio, precio_venta, mitreeview):
-        item_sleccionado = mitreeview.focus()
-        valor_id = mitreeview.item(item_sleccionado)
+    def modificar(self):
+        item_sleccionado = self.tree.focus()
+        valor_id = self.tree.item(item_sleccionado)
         valor = valor_id["text"]
-        list = [valor, "_modi", nombre.get(), stock.get(), precio.get(), precio_venta.get()]
+        list = [valor, "_modi", self.nmb.get(), self.stk.get(), self.prc.get(), self.prc_v.get()]
         data_serial = pickle.dumps(list)
         data_len = str(len(data_serial))
         message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
@@ -79,14 +81,14 @@ class Abmc:
         message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
         server.send(message)
     
-    def salirr(self, topp):
-        self.message("_quit")
-        topp.top.destroy()
-        topp.parent.destroy()
+    def salirr(self_Abmc, self_Vista):
+        self_Abmc.message("_quit")
+        self_Vista.top.destroy()
+        self_Vista.parent.destroy()
     
-    def minimizar(self, topp):
-        topp.top.destroy()
-        topp.parent.iconify()
+    def minimizar(self):
+        self.top.destroy()
+        self.parent.iconify()
         
 
                 

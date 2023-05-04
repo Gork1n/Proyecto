@@ -84,22 +84,22 @@ class Ventana:
         self.objeto_base.salirr(self)
 
     def minimizar(self):
-        self.objeto_base.minimizar(self)
+        Abmc.minimizar(self)
 
     def serveer(self,):
-        self.objeto_base.server()
+        Abmc.server()
 
-    def alta(self,):
-        self.objeto_base.alta(self.nmb, self.stk, self.prc, self.prc_v, self.tree)
+    def alta(self):
+        Abmc.alta(self)
 
     def actualizar(self,):
         self.objeto_base.actualizar_info(self.tree, 0)
      
-    def borrar(self,):
+    def borrar(self):
         self.objeto_base.baja(self.tree)
 
-    def _modificar(self, ):
-        self.objeto_base.modificar(self.nmb, self.stk, self.prc, self.prc_v, self.tree)
+    def _modificar(self):
+        Abmc.modificar(self)
 
 
     
