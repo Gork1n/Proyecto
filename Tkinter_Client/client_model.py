@@ -20,7 +20,7 @@ class Abmc:
         data_len = str(len(data_serial))
         message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
         server.send(message)
-        Abmc.actualizar_info(self, 0)
+        Abmc.actualizar_info(self, self.tree, 0)
     
     def baja(self, mitreeview):
         try:
@@ -48,7 +48,7 @@ class Abmc:
         message = bytes(f"{data_len:<{HEADER}}",'utf-8')+ data_serial
         server.send(message)
         
-    def actualizar_info(self, mitreeview, m):
+    def actualizar_info(self,mitreeview, m):
         if m == 0:
             prueba=0
             data_serial = pickle.dumps(prueba)

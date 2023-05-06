@@ -1,4 +1,3 @@
-import flet
 from flet import *
 from c_model import Abmc
 import threading
