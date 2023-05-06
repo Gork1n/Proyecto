@@ -33,8 +33,10 @@ def alta(_nombre, _unidades, _precio, _precio_venta, conn):
         print("Tiene el mismo nombre el producto")
     
 def baja(id):
-    borrar=Stock.get(Stock.id==id)
-    borrar.delete_instance()
+    try:
+        borrar=Stock.get(Stock.id==id)
+        borrar.delete_instance()
+    except:pass
 
 def actualizar_tk(conn):
     for fila in Stock.select():

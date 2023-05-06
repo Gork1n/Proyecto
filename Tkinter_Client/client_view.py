@@ -94,7 +94,10 @@ class Ventana:
 
     def actualizar(self,):
         self.objeto_base.actualizar_info(self.tree, 0)
-     
+    
+    def mensaje_entrada(self):
+        self.objeto_base.message(1)
+
     def borrar(self):
         self.objeto_base.baja(self.tree)
 

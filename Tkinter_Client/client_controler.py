@@ -34,7 +34,7 @@ class Con:
     thread23 = threading.Thread(target=Controller.aviso_ac, args=(root_tk,))
     application.objeto_vista.serveer()
     thread23.start()
-    application.objeto_vista.actualizar()
+    application.objeto_vista.mensaje_entrada()
     root_tk.mainloop()
 
 if __name__ == "__main__":

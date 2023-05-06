@@ -36,6 +36,7 @@ def Entrada(conn, addrs):
                 data += conn.recv(int(data_len))
                 data_deserial = pickle.loads(data)
                 data_deserial
+                print(data_deserial)
                 try:
                     list = data_deserial[1]
                 except:
@@ -45,32 +46,34 @@ def Entrada(conn, addrs):
                         aviso_qt(conn)
                     case 0:
                         actualizar_tk(conn)
+                    case 1:
+                        aviso_ac(conn)
                     case "_baja":
                         print("baja de :", addrs)
                         baja(data_deserial[0])
-                        aviso_ac()
+                        aviso_ac(0)
                     case "_modi":
                         print("modi de :", addrs)
                         modificar(data_deserial)
-                        aviso_ac()
+                        aviso_ac(0)
                     case _:
                         print("alta de :", addrs)
                         altas(data_deserial, conn)
-                        aviso_ac()
+                        aviso_ac(0)
         except:break
 
 
 # Avisa a todos los clientes conectados de actualizar
-def aviso_ac():
-    server.setblocking(False)
-    for con in conn_ac:
-        try:
-            con.send("_ac".encode('utf-8'))
-            print("Se ha enviado")
-        except:
-            conn_ac.remove(con)
-    server.setblocking(True)
-
+def aviso_ac(conn):
+    if conn == 0:
+        for con in conn_ac:
+            try:
+                con.send("_ac".encode('utf-8'))
+                print("Se ha enviado")
+            except:
+                conn_ac.remove(con)
+    else:
+        tuplas[conn].send("_ac".encode('utf-8'))
 # Si un cliente cierra la conexion lo elimina de la lista
 def aviso_qt(client):
     con = tuplas[client]
@@ -78,6 +81,7 @@ def aviso_qt(client):
     tuplas.pop(client)
     conn_ac.remove(con)
     clients.remove(client)
+    print(tuplas)
     con.close()
 
 
@@ -95,10 +99,11 @@ def receive_connections():
     while True:
         client, address = server.accept()
         avss, addr = server.accept()
-        print(f"Connect: {addr}")
+        print(f"Connect: {address}")
         clients.append(client)
         conn_ac.append(avss)
         tuplas[client] = avss
+        print(tuplas)
 
         thread = threading.Thread(target=Entrada, args=(client, address))
         thread.start()
