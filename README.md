@@ -1,6 +1,6 @@
 # Proyecto Orgstock
 
-Es una aplicación, en un principio creada en la diplomatura de Python, pero que seguí desarrollando para aprender e interiorizar los conceptos del mismo. Consiste en un cliente creado con Tkinter que permite ver el stock en una tabla y modificarlo a conveniencia. Este se conecta con un servidor socket que almacena toda su información en la base de datos SQLite usando el ORM peewee. El servidor acepta múltiples clientes al mismo tiempo y estos se actualizan en sincronía.
+Es una aplicación, en un principio creada en la diplomatura de Python, pero que seguí desarrollando para aprender e interiorizar los conceptos del mismo. Consiste en un cliente creado con Tkinter/Flet que permite ver el stock en una tabla y modificarlo a conveniencia. Este se conecta con un servidor socket que almacena toda su información en la base de datos SQLite usando el ORM peewee. El servidor acepta múltiples clientes al mismo tiempo y estos se actualizan en sincronía.
 
 
 ## Instrucciones para iniciar el programa
