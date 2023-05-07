@@ -12,11 +12,7 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 ## Errores comunes al iniciarlo
 
 1. No tener permitido la ejecución de scripts en powershell: 
-  * Iniciar Powershell como administrador
-  * scribir Set-ExecutionPolicy Unrestricted
-  * Elegir la opcion Si
-
-1. First list item
-   - First nested list item
-     - Second nested list item
+   - Iniciar Powershell como administrador
+   - Escribir Set-ExecutionPolicy Unrestricted
+   - Elegir la opcion Si
 
