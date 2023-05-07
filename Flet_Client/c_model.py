@@ -21,9 +21,6 @@ class Abmc:
         server.send(message)
         for i in self.table_list:
             i.value = ''
-        self.addButton.visible = True
-        self.delButton.visible = False
-        self.edButton.visible = False
     
     def editindex(e,n,u,p,pv,self):
         self.id = int(e)
@@ -36,6 +33,7 @@ class Abmc:
         self.addButton.visible = False
         self.delButton.visible = True
         self.edButton.visible = True
+        self.rButton.visible = True
         self.page.update()
 
     def removeindex(self,e):
