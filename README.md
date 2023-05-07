@@ -16,4 +16,7 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
   * scribir Set-ExecutionPolicy Unrestricted
   * Elegir la opcion Si
 
+1. First list item
+   - First nested list item
+     - Second nested list item
 
