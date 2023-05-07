@@ -11,8 +11,8 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 
 ## Errores comunes al iniciarlo
 
-1. No tener permitido la ejecución de scripts en powershell: 
-   - Iniciar Powershell como administrador
-   - Escribir Set-ExecutionPolicy Unrestricted
+1. No se permite la ejecución de scripts por PowerShell:
+   - Iniciar PowerShell como administrador
+   - Escribir 'Set-ExecutionPolicy Unrestricted'
    - Elegir la opcion Si
 
