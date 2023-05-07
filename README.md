@@ -9,9 +9,9 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 2. Iniciar el virtual enviroment: .\venv\Scripts\activate
 3. Por último, instalar los requirements: pip install -r requirements.txt
 
-## Errores comunes al iniciarlo
+## Requerimientos
 
-1. No se permite la ejecución de scripts por PowerShell:
+1. Tener activada la ejecución de scripts en PowerShell:
    - Iniciar PowerShell como administrador
    - Escribir 'Set-ExecutionPolicy Unrestricted'
    - Elegir la opción Si
