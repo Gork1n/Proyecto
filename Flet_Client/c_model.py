@@ -89,7 +89,6 @@ class Abmc:
                 data += server.recv(int(data_len))
                 data_deserial = pickle.loads(data)
                 fin = data_deserial
-                print(fin)
                 if data_deserial == 0:
                     break
                 else:

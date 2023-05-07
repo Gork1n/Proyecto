@@ -72,7 +72,7 @@ class Ventana:
         server.connect((HOST, 55555))
         Abmc.message(1)
         while True:
-            print(1)
             data = server.recv(1000).decode('utf-8')
             if data == "_ac":
                 Abmc.actualizar_info(self, 0)
+                self.page.update()
