@@ -16,3 +16,5 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
    - Escribir 'Set-ExecutionPolicy Unrestricted'
    - Elegir la opción Si
 
+2. Tener la libreria virtualenv:
+   - pip install virtualenv
