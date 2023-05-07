@@ -14,5 +14,5 @@ Es una aplicación, en un principio creada en la diplomatura de Python, pero que
 1. No se permite la ejecución de scripts por PowerShell:
    - Iniciar PowerShell como administrador
    - Escribir 'Set-ExecutionPolicy Unrestricted'
-   - Elegir la opcion Si
+   - Elegir la opción Si
 
